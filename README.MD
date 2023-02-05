@@ -1,10 +1,8 @@
 ### Установка
 
-```js
+```
 git clone https://github.com/Sempai-07/discord.js-starter
-
 cd discord.js-starter
-
 npm install
 ```
 
@@ -22,7 +20,7 @@ module.exports = {
 
 ### Slash cmd
 slash => info => ping.js
-```
+```js
 module.exports = {
   name: "ping",
   description: "Задержка бота",
@@ -40,16 +38,16 @@ module.exports = {
   name: 'button',
   code: (client, message, args) => {
   const button = new ActionRowBuilder()
-		.addComponents([
-			new ButtonBuilder()
-			.setCustomId('lol')
-			.setDisabled(false)
-			.setLabel('Invite')
-			.setStyle(3)
+      .addComponents([
+         new ButtonBuilder()
+	  .setCustomId('lol')
+	  .setDisabled(false)
+	  .setLabel('Invite')
+	  .setStyle(3)
 		])
-		message.reply({ content: 'Button', components: [button] })
-		}
-	}
+   message.reply({ content: 'Button', components: [button] })
+     }
+    }
 ```
 
 button => button.js
@@ -97,6 +95,18 @@ module.exports = {
   code: async(client, interaction) => {
     interaction.reply('Hello')
   }
+}
+```
+
+### Event
+events => ready.js
+```js
+module.exports = {
+   name: "ready",
+   once: true,
+   code: async(client) => {
+     console.log("Бот запустился: " + client.user.tag)
+   }
 }
 ```
 
