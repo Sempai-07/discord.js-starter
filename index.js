@@ -3,6 +3,7 @@ const path = require('path');
 const fs = require("fs");
 const client = new Client({intents: 131071});
 client.commands = new Collection();
+client.aliases = new Collection();
 client.slashCommands = new Collection();
 client.buttons = new Collection();
 client.selects = new Collection();
